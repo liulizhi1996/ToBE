@@ -1,10 +1,10 @@
-## ToBE
+# ToBE
 
 This is the PyTorch implementation of **Topology-guided Graph Transformer for Recommender Systems**.
 
 ![workflow](workflow.png)
 
-### Requirements
+## Requirements
 
 - Environment:
   - Python 3.10.8
@@ -18,13 +18,13 @@ This is the PyTorch implementation of **Topology-guided Graph Transformer for Re
   - scipy == 1.12.0
   - googledrivedownloader == 0.4
 
-### How to run
+## How to run
 
 The commands and hyperparameter settings are provided in the `run.sh` script. The datasets will be automatically downloaded from the internet during program execution. Make sure the folder `data` exists in the root directory.
 
 To reproduce the results reported in our paper, please follow the two steps below:
 
-#### Step 1: Preprocessing
+### Step 1: Preprocessing
 
 Run the following commands to preprocess the raw datasets. This step performs data filtering and precomputes the positional encodings for each node.
 
@@ -35,7 +35,7 @@ for dataset in Yelp Gowalla AmazonBook Tmall Movielens1M AlibabaIFashion; do
 done
 ```
 
-#### Step 2: Run Recommendation Model
+### Step 2: Run Recommendation Model
 
 After preprocessing, execute the recommendation model with the corresponding hyperparameter settings for each dataset:
 
@@ -49,6 +49,6 @@ python3 recommend.py --dataset Movielens1M --lr 0.0005 --lambda_reg 0.1 --lambda
 python3 recommend.py --dataset AlibabaIFashion --lr 0.001 --lambda_reg 0.2 --lambda_au 0.5 --train_batch_size 2048 --num_layers 3
 ```
 
-### Results
+## Results
 
 ![result](result.png)
